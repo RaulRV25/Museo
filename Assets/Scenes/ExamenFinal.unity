@@ -940,7 +940,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 808514775}
-  - component: {fileID: 808514774}
   m_Layer: 0
   m_Name: RaycastCrontroller
   m_TagString: Untagged
@@ -948,23 +947,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &808514774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808514773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ea5e8cb7001f2a40a852ff7c18bd24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RaycastController
-  raycastManager: {fileID: 2109038042}
-  planeManager: {fileID: 2109038039}
-  horizontalModelPrefab: {fileID: 1484499140377071604, guid: 13c7263e7c33e9a418983356bc3ddfe3, type: 3}
-  verticalModelPrefab: {fileID: 5180288380859737209, guid: 3d65734d8cc448748ad80bcc06015a4e, type: 3}
-  debugText: {fileID: 607260622}
 --- !u!4 &808514775
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,7 +1366,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808514774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RaycastController, Assembly-CSharp
         m_MethodName: SelectModel
         m_Mode: 3
@@ -1517,7 +1499,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 808514774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RaycastController, Assembly-CSharp
         m_MethodName: SelectModel
         m_Mode: 3
