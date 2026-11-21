@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e147ebc035c11543b59ebb28bd3550d, type: 3}
   m_Name: Pintura_4
   m_EditorClassIdentifier: Assembly-CSharp::MuseumAR.Data.ExhibitData
-  exhibitName: 
-  description: 
-  category: 
-  periodOrYear: 
-  icon: {fileID: 21300000, guid: 4ee0d58e5668d844ab59d00eaf9dc7ec, type: 3}
-  extraInfoOrFunFact: 
+  exhibitName: "Sketch de pr\xE1ctica de anatom\xEDa"
+  description: Julieta Rumoroso
+  category: 'Boceto digital '
+  periodOrYear: 2026
+  icon: {fileID: 21300000, guid: e498c9a709dec28458f2df601093b87d, type: 3}
+  extraInfoOrFunFact: "Estudio de anatom\xEDa"
   themeTrack: {fileID: 0}

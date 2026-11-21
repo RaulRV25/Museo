@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e147ebc035c11543b59ebb28bd3550d, type: 3}
   m_Name: Pintura_3
   m_EditorClassIdentifier: Assembly-CSharp::MuseumAR.Data.ExhibitData
-  exhibitName: 
-  description: 
-  category: 
-  periodOrYear: 
-  icon: {fileID: 21300000, guid: 85276a0420891ea4b974623eb20a8ba7, type: 3}
-  extraInfoOrFunFact: 
+  exhibitName: "\xC1rbol de juliter "
+  description: 'Julieta Rumoroso '
+  category: 'Arte digital '
+  periodOrYear: 2026
+  icon: {fileID: 21300000, guid: 8c36471540b63394c9262e2d703c58aa, type: 3}
+  extraInfoOrFunFact: Arte estilizado
   themeTrack: {fileID: 0}
