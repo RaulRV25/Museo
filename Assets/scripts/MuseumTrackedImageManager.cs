@@ -31,6 +31,11 @@ namespace MuseumAR.AR
                 if (!string.IsNullOrWhiteSpace(mapping.referenceImageName) && mapping.exhibitPrefab != null)
                 {
                     _mappingByName[mapping.referenceImageName] = mapping;
+                    Debug.Log($"[MuseumTrackedImageManager] Mapeado '{mapping.referenceImageName}' -> Prefab '{mapping.exhibitPrefab.name}' | Data: {(mapping.exhibitData != null ? mapping.exhibitData.name : "null")}", this);
+                }
+                else
+                {
+                    Debug.LogWarning($"[MuseumTrackedImageManager] Mapping incompleto ignorado: name='{mapping.referenceImageName}', prefab={(mapping.exhibitPrefab != null ? mapping.exhibitPrefab.name : "null")}", this);
                 }
             }
         }
@@ -49,6 +54,7 @@ namespace MuseumAR.AR
         {
             foreach (var added in args.added)
             {
+                Debug.Log($"[MuseumTrackedImageManager] Image ADDED: '{added.referenceImage.name}' | State: {added.trackingState}", this);
                 HandleTrackedImage(added);
             }
 
@@ -60,6 +66,7 @@ namespace MuseumAR.AR
             foreach (var removed in args.removed)
             {
                 string key = removed.Value.referenceImage.name;
+                Debug.Log($"[MuseumTrackedImageManager] Image REMOVED: '{key}'", this);
                 if (_spawnedByName.TryGetValue(key, out var obj) && obj != null)
                 {
                     Destroy(obj);
@@ -71,9 +78,14 @@ namespace MuseumAR.AR
         private void HandleTrackedImage(ARTrackedImage trackedImage)
         {
             string imageName = trackedImage.referenceImage.name;
-            if (!_mappingByName.TryGetValue(imageName, out var mapping)) return;
+            if (!_mappingByName.TryGetValue(imageName, out var mapping))
+            {
+                Debug.LogWarning($"[MuseumTrackedImageManager] Imagen '{imageName}' NO está en _mappingByName (revisa 'Reference Image Name' en el Inspector).", this);
+                return;
+            }
 
             bool isTracking = trackedImage.trackingState == TrackingState.Tracking;
+            bool justInstantiated = false;
 
             if (!_spawnedByName.TryGetValue(imageName, out var instance) || instance == null)
             {
@@ -83,6 +95,9 @@ namespace MuseumAR.AR
                 instance.transform.localPosition = Vector3.zero;
                 instance.transform.localRotation = Quaternion.identity;
                 _spawnedByName[imageName] = instance;
+                justInstantiated = true;
+
+                Debug.Log($"[MuseumTrackedImageManager] Instanciado '{instance.name}' para '{imageName}'", this);
 
                 if (instance.TryGetComponent<ExhibitObjectController>(out var controller))
                 {
@@ -91,9 +106,13 @@ namespace MuseumAR.AR
             }
 
             bool wasActive = instance.activeSelf;
-            instance.SetActive(isTracking);
+            if (wasActive != isTracking)
+            {
+                instance.SetActive(isTracking);
+                Debug.Log($"[MuseumTrackedImageManager] '{instance.name}' SetActive({isTracking}) para '{imageName}' (State: {trackedImage.trackingState})", this);
+            }
 
-            if (!wasActive && isTracking && instance.TryGetComponent<ExhibitObjectController>(out var ctrl))
+            if (!justInstantiated && !wasActive && isTracking && instance.TryGetComponent<ExhibitObjectController>(out var ctrl))
             {
                 ctrl.PlaySpawnSequence();
             }

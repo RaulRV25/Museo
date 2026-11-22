@@ -21,22 +21,22 @@ MonoBehaviour:
       m_GuidLow: 4675619958948075388
       m_GuidHigh: 8836467054440054412
     m_SerializedTextureGuid:
-      m_GuidLow: 3027803623851689230
-      m_GuidHigh: 7044435559470278187
+      m_GuidLow: 12836575820223143231
+      m_GuidHigh: 6948397327950455754
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Pintura_4
-    m_Texture: {fileID: 2800000, guid: 9952050eeb5a2a042b265b7dd1dcc261, type: 3}
+    m_Texture: {fileID: 2800000, guid: 88c4dd3fadb2b224caa3c23a8eaa6d60, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 5265444227017629319
       m_GuidHigh: 11051377461855965092
     m_SerializedTextureGuid:
-      m_GuidLow: 6009079708836114674
-      m_GuidHigh: 13877264885274282987
+      m_GuidLow: 11809569586080615436
+      m_GuidHigh: 15116077686538240776
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Pintura_3
-    m_Texture: {fileID: 2800000, guid: 602f30f28a285364eb8bc664e3f295c0, type: 3}
+    m_Texture: {fileID: 2800000, guid: 00978c0c04f8a3e4080352479118c7d1, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 5444360912597753452
       m_GuidHigh: 2117532218029154480
@@ -51,9 +51,9 @@ MonoBehaviour:
       m_GuidLow: 5271293790034837698
       m_GuidHigh: 8154776098380471939
     m_SerializedTextureGuid:
-      m_GuidLow: 18191405599522771367
-      m_GuidHigh: 705281447006143913
+      m_GuidLow: 1235373689965167861
+      m_GuidHigh: 12640298866276877432
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Pintura_1
-    m_Texture: {fileID: 2800000, guid: b49b51a7db02fc74a9857943bda9c909, type: 3}
+    m_Texture: {fileID: 2800000, guid: 633cc4f5edd3112478c43403d95c6baf, type: 3}

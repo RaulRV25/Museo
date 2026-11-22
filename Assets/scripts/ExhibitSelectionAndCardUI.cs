@@ -58,12 +58,18 @@ namespace MuseumAR.UI
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
 
             if (arCamera == null) arCamera = Camera.main;
-            if (arCamera == null) return;
+            if (arCamera == null)
+            {
+                Debug.LogWarning("[ExhibitSelectionAndCardUI] arCamera es null.", this);
+                return;
+            }
 
             Ray ray = arCamera.ScreenPointToRay(screenPos);
             if (Physics.Raycast(ray, out RaycastHit hit, 100f, exhibitLayerMask))
             {
                 var controller = hit.collider.GetComponentInParent<ExhibitObjectController>();
+                Debug.Log($"[ExhibitSelectionAndCardUI] Raycast golpeó '{hit.collider.name}' | Controller: {(controller != null ? controller.name : "null")} | Data: {(controller != null && controller.Data != null ? controller.Data.name : "null")}", this);
+
                 if (controller != null && controller.Data != null)
                 {
                     OpenCard(controller.Data);
@@ -92,7 +98,13 @@ namespace MuseumAR.UI
 
         public void OpenCard(ExhibitData data)
         {
-            if (data == null || cardPanel == null) return;
+            if (data == null || cardPanel == null)
+            {
+                Debug.LogWarning($"[ExhibitSelectionAndCardUI] OpenCard abortado: data={(data != null ? data.name : "null")}, cardPanel={(cardPanel != null ? "ok" : "null")}", this);
+                return;
+            }
+
+            Debug.Log($"[ExhibitSelectionAndCardUI] Abriendo ficha '{data.exhibitName}' | Track: {(data.themeTrack != null ? data.themeTrack.name : "sin audio")}", this);
 
             if (iconImage != null) iconImage.sprite = data.icon;
             if (nameText != null) nameText.text = data.exhibitName;
@@ -128,6 +140,7 @@ namespace MuseumAR.UI
 
         public void CloseCard()
         {
+            Debug.Log("[ExhibitSelectionAndCardUI] Cerrando ficha técnica.", this);
             if (cardPanel != null) cardPanel.SetActive(false);
 
             if (exhibitAudioSource != null)

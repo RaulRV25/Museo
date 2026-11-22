@@ -18,4 +18,4 @@ MonoBehaviour:
   periodOrYear: 2026
   icon: {fileID: 21300000, guid: e498c9a709dec28458f2df601093b87d, type: 3}
   extraInfoOrFunFact: "Estudio de anatom\xEDa"
-  themeTrack: {fileID: 0}
+  themeTrack: {fileID: 8300000, guid: 397a89c71b5618a4b91bf1ce9113914b, type: 3}
