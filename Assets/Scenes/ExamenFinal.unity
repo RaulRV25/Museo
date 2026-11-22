@@ -2758,7 +2758,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acb9d94bdcd27448a8f803d61518068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuseumAR.AR.MuseumTrackedImageManager
-  mappings: []
+  mappings:
+  - referenceImageName: Pintura_1
+    exhibitData: {fileID: 11400000, guid: 57cd75c1f5d714641b824e74b8080920, type: 2}
+    exhibitPrefab: {fileID: 4579619533885988747, guid: 0b9383bd775b2964f84a30aa2d8364cd, type: 3}
+  - referenceImageName: Pintura_2
+    exhibitData: {fileID: 11400000, guid: 6ff1f1b8d64a39f4b98ca885c4779729, type: 2}
+    exhibitPrefab: {fileID: 5630367486054957719, guid: c91a95a421c1e654d8114eb7e70fe74b, type: 3}
+  - referenceImageName: Pintura_3
+    exhibitData: {fileID: 11400000, guid: 442a7f387ecdd19449808945d18a904d, type: 2}
+    exhibitPrefab: {fileID: 7803032056828993149, guid: e497f087aead81444992dbc7db2641aa, type: 3}
+  - referenceImageName: Pintura_4
+    exhibitData: {fileID: 11400000, guid: bbc62f0a4364dbc488e456373f478687, type: 2}
+    exhibitPrefab: {fileID: 4657221014066737860, guid: ffbe35cddbcd4b04c9826f48002a395d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
